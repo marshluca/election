@@ -1,0 +1,21 @@
+default: &defaults
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  host: localhost
+  username: root
+  password: "123456"
+  socket: /tmp/mysql.sock
+
+development:
+  database: election_development
+  <<: *defaults
+
+test:
+  database: election_test
+  <<: *defaults
+
+production:
+  database: election_development
+  <<: *defaults
